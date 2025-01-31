@@ -32,7 +32,7 @@ jobs:
       - name: Ensure Code is in /home/ubuntu/app
         run: |
           if [ ! -d "/home/ubuntu/app" ]; then
-            sudo git clone https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO.git /home/ubuntu/app
+            sudo git clone https://github.com/RadityaDito/cicd-golang-ec2.git /home/ubuntu/app
           else
             cd /home/ubuntu/app
             sudo git pull origin main

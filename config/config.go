@@ -23,9 +23,9 @@ func InitDB() {
 	dsn := fmt.Sprintf(
 		"host=%s user=%s password=%s dbname=%s port=%s sslmode=%s",
 		getEnv("DB_HOST", "localhost"),
-		getEnv("DB_USER", "postgres"),
-		getEnv("DB_PASSWORD", "postgres"),
-		getEnv("DB_NAME", "crud_db"),
+		getEnv("POSTGRES_USER", "postgres"),
+		getEnv("POSTGRES_PASSWORD", "postgres"),
+		getEnv("POSTGRES_DB", "crud_db"),
 		getEnv("DB_PORT", "5432"),
 		getEnv("DB_SSLMODE", "disable"),
 	)

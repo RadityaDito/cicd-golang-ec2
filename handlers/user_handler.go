@@ -11,7 +11,7 @@ import (
 )
 
 func Home(c echo.Context) error {
-	return c.String(http.StatusOK, "Welcome to Golang Echo CRUD")
+	return c.String(http.StatusOK, "Welcome to Golang Echo CRUD API by RadityaDito ")
 }
 
 func GetUsers(c echo.Context) error {

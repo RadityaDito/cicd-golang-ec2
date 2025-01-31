@@ -1,9 +1,12 @@
 name: CI/CD Pipeline
 
 on:
+  push:
+    branches:
+      - main # Runs on push to main branch
   pull_request:
     branches:
-      - main # Run CI/CD when a PR is created to main
+      - main # Runs on PR to main branch
 
 jobs:
   build-and-push:
@@ -21,12 +24,14 @@ jobs:
         run: docker build -t radityaditoo/golang-echo-crud:latest .
 
       - name: Push Docker Image
+        if: github.event_name == 'push' # Only push image when commit is made to main
         run: docker push radityaditoo/golang-echo-crud:latest
 
   deploy:
     name: Deploy to AWS EC2
     runs-on: self-hosted
-    needs: build-and-push # Ensures deployment runs after the image is built
+    needs: build-and-push
+    if: github.event_name == 'push' # Only deploy when a commit is pushed to main
 
     steps:
       - name: Ensure Code is in /home/ubuntu/app

@@ -25,7 +25,7 @@ RUN apk --no-cache add ca-certificates
 COPY --from=builder /app/main .
 
 # Copy the .env file
-COPY .env .
+# COPY .env .
 
 # Ensure the binary is executable
 RUN chmod +x /app/main

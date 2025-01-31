@@ -1,9 +1,9 @@
-name: CI/CD Pipeline
+name: CI/CD for Main Branch
 
 on:
-  pull_request:
+  push:
     branches:
-      - main # Run CI/CD when a PR is created to main
+      - main # Runs when code is pushed to main
 
 jobs:
   build-and-push:
@@ -26,7 +26,7 @@ jobs:
   deploy:
     name: Deploy to AWS EC2
     runs-on: self-hosted
-    needs: build-and-push # Ensures deployment runs after the image is built
+    needs: build-and-push # Deploy only after build is successful
 
     steps:
       - name: Ensure Code is in /home/ubuntu/app

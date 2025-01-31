@@ -1,0 +1,62 @@
+# Binary files
+*.exe
+*.out
+*.o
+*.a
+*.so
+*.dll
+
+# Build and cache directories
+/bin/
+/pkg/
+/vendor/
+/dist/
+/tmp/
+/cache/
+
+# Golang dependencies & modules
+go.sum
+go.work
+go.work.sum
+
+# Logs and debugging
+*.log
+debug/
+trace.out
+*.test
+*.prof
+
+# Environment variables & credentials
+.env
+.env.local
+.env.*.local
+secrets.json
+config.yaml
+
+# IDE & editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+
+# Docker & Deployment
+docker-compose.override.yml
+*.tar
+*.pid
+
+# Node modules (if using frontend)
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Coverage reports
+cover.out
+*.coverprofile
+coverage/
+
+# Test data & temporary files
+testdata/
+.DS_Store
+Thumbs.db

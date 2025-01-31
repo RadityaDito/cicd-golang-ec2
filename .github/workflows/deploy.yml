@@ -1,9 +1,9 @@
 name: CI/CD Pipeline
 
 on:
-  push:
+  pull_request:
     branches:
-      - main # Run CI/CD when code is pushed to main
+      - main # Run CI/CD when a PR is created to main
 
 jobs:
   build-and-push:
